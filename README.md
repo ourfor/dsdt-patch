@@ -6,6 +6,11 @@
 - [电池状态](https://www.tonymacx86.com/threads/guide-how-to-patch-dsdt-for-working-battery-status.116102/)
 - [定制USB](https://www.tonymacx86.com/threads/guide-creating-a-custom-ssdt-for-usbinjectall-kext.211311/)
 
+# 补丁源
+- Rehabman
+```bash
+http://raw.github.com/RehabMan/Laptop-DSDT-Patch/master
+```
 
 ### 修复dsdt教程 by Rehabman
 
