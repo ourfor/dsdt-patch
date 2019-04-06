@@ -56,5 +56,5 @@ pbpaste > refs.txt
 ```
 然后修复错误
 ```bash
-iasl -da -dl -fe refs.txt DSDT.aml SSDT*.aml
+iasl -da -dl -fe refs.txt DSDT.aml SSDT*.aml  # 较新的cpu去掉参数-da
 ```
