@@ -5,13 +5,13 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-6-XMCC1604.aml, Fri Mar  6 13:58:52 2020
+ * Disassembly of SSDT-6-XMCC1604.aml, Fri Mar  6 18:20:39 2020
  *
  * Original Table Header:
  *     Signature        "SSDT"
  *     Length           0x00002BE8 (11240)
  *     Revision         0x01
- *     Checksum         0x02
+ *     Checksum         0xFC
  *     OEM ID           "XMCC"
  *     OEM Table ID     "XMCC1604"
  *     OEM Revision     0x00001000 (4096)
@@ -21,8 +21,8 @@
 DefinitionBlock ("", "SSDT", 1, "XMCC", "XMCC1604", 0x00001000)
 {
     /*
-     * iASL Warning: There were 15 external control methods found during
-     * disassembly, but only 14 were resolved (1 unresolved). Additional
+     * iASL Warning: There were 5 external control methods found during
+     * disassembly, but only 4 were resolved (1 unresolved). Additional
      * ACPI tables may be required to properly disassemble the code. This
      * resulting disassembler output file may not compile because the
      * disassembler did not know how many arguments to assign to the
@@ -47,13 +47,6 @@ DefinitionBlock ("", "SSDT", 1, "XMCC", "XMCC1604", 0x00001000)
      * because the disassembler had to guess at the number of arguments
      * required for each:
      */
-    /*
-     * External declarations were imported from
-     * a reference file -- refs.txt
-     */
-
-    External (_GPE.MMTB, MethodObj)    // Imported: 0 Arguments
-    External (_GPE.VHOV, MethodObj)    // Imported: 3 Arguments
     External (_PR_.CPPC, IntObj)    // (from opcode)
     External (_PR_.HWPV, IntObj)    // (from opcode)
     External (_PR_.PR00, UnknownObj)    // Warning: Unknown object
@@ -89,18 +82,11 @@ DefinitionBlock ("", "SSDT", 1, "XMCC", "XMCC1604", 0x00001000)
     External (_SB_.PCI0.GFX0.CPL6, UnknownObj)    // (from opcode)
     External (_SB_.PCI0.GFX0.CPL7, UnknownObj)    // (from opcode)
     External (_SB_.PCI0.GFX0.CPL8, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD02._BCM, MethodObj)    // Imported: 1 Arguments
     External (_SB_.PCI0.LPCB.EC0_, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.LPCB.EC0_.RAM_, OpRegionObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.ECMD, MethodObj)    // Imported: 1 Arguments
-    External (_SB_.PCI0.LPCB.H_EC.ECRD, MethodObj)    // Imported: 1 Arguments
-    External (_SB_.PCI0.LPCB.H_EC.ECWT, MethodObj)    // Imported: 2 Arguments
-    External (_SB_.PCI0.PEG0.PEGP.SGPO, MethodObj)    // Imported: 2 Arguments
     External (_SB_.PCI0.RP01, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.RP01.PXSX, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.RP01.PXSX._ADR, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.SAT0.SDSM, MethodObj)    // Imported: 4 Arguments
-    External (_SB_.PCI0.XHC_.RHUB.TPLD, MethodObj)    // Imported: 2 Arguments
     External (_TZ_.TZ01._TMP, UnknownObj)    // (from opcode)
     External (DID1, UnknownObj)    // (from opcode)
     External (DID2, UnknownObj)    // (from opcode)
@@ -111,7 +97,6 @@ DefinitionBlock ("", "SSDT", 1, "XMCC", "XMCC1604", 0x00001000)
     External (DID7, UnknownObj)    // (from opcode)
     External (DID8, UnknownObj)    // (from opcode)
     External (GGIV, MethodObj)    // 1 Arguments (from opcode)
-    External (MDBG, MethodObj)    // Imported: 1 Arguments
     External (MMCH, UnknownObj)    // (from opcode)
     External (OPTF, UnknownObj)    // (from opcode)
     External (OSYS, UnknownObj)    // (from opcode)
@@ -124,7 +109,7 @@ DefinitionBlock ("", "SSDT", 1, "XMCC", "XMCC1604", 0x00001000)
 
     Scope (\_SB.PCI0.RP01.PXSX)
     {
-        OperationRegion (VBOR, SystemMemory, 0x8AF13018, 0x00040004)
+        OperationRegion (VBOR, SystemMemory, 0x8CF13018, 0x00040004)
         Field (VBOR, DWordAcc, Lock, Preserve)
         {
             RVBS,   32, 
@@ -141,7 +126,7 @@ DefinitionBlock ("", "SSDT", 1, "XMCC", "XMCC1604", 0x00001000)
 
     Scope (\_SB.PCI0.RP01.PXSX)
     {
-        OperationRegion (SGOP, SystemMemory, 0x8A88DF18, 0x00000046)
+        OperationRegion (SGOP, SystemMemory, 0x8C88DF18, 0x00000046)
         Field (SGOP, AnyAcc, Lock, Preserve)
         {
             XBAS,   32, 
@@ -170,7 +155,7 @@ DefinitionBlock ("", "SSDT", 1, "XMCC", "XMCC1604", 0x00001000)
 
     Scope (\_SB.PCI0.RP01.PXSX)
     {
-        OperationRegion (NOPR, SystemMemory, 0x8AF10018, 0x00002018)
+        OperationRegion (NOPR, SystemMemory, 0x8CF10018, 0x00002018)
         Field (NOPR, AnyAcc, Lock, Preserve)
         {
             DHPS,   8, 

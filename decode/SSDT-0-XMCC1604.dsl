@@ -5,13 +5,13 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-0-XMCC1604.aml, Fri Mar  6 13:58:52 2020
+ * Disassembly of SSDT-0-XMCC1604.aml, Fri Mar  6 18:20:39 2020
  *
  * Original Table Header:
  *     Signature        "SSDT"
  *     Length           0x00004257 (16983)
  *     Revision         0x02
- *     Checksum         0x7F
+ *     Checksum         0x7D
  *     OEM ID           "XMCC"
  *     OEM Table ID     "XMCC1604"
  *     OEM Revision     0x00000000 (0)
@@ -20,13 +20,6 @@
  */
 DefinitionBlock ("", "SSDT", 2, "XMCC", "XMCC1604", 0x00000000)
 {
-    /*
-     * External declarations were imported from
-     * a reference file -- refs.txt
-     */
-
-    External (_GPE.MMTB, MethodObj)    // Imported: 0 Arguments
-    External (_GPE.VHOV, MethodObj)    // Imported: 3 Arguments
     External (_PR_.PR00, ProcessorObj)    // (from opcode)
     External (_PR_.PR01, ProcessorObj)    // (from opcode)
     External (_PR_.PR02, ProcessorObj)    // (from opcode)
@@ -46,17 +39,11 @@ DefinitionBlock ("", "SSDT", 2, "XMCC", "XMCC1604", 0x00000000)
     External (_SB_.GNUM, MethodObj)    // 1 Arguments (from opcode)
     External (_SB_.INUM, MethodObj)    // 1 Arguments (from opcode)
     External (_SB_.PCI0.GFX0.CLID, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD02._BCM, MethodObj)    // Imported: 1 Arguments
     External (_SB_.PCI0.GFX0.DD1F, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.GFX0.GHDS, MethodObj)    // 1 Arguments (from opcode)
     External (_SB_.PCI0.GFX0.GLID, MethodObj)    // 1 Arguments (from opcode)
     External (_SB_.PCI0.I2C1, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.LPCB, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.ECMD, MethodObj)    // Imported: 1 Arguments
-    External (_SB_.PCI0.LPCB.H_EC.ECRD, MethodObj)    // Imported: 1 Arguments
-    External (_SB_.PCI0.LPCB.H_EC.ECWT, MethodObj)    // Imported: 2 Arguments
-    External (_SB_.PCI0.PEG0.PEGP.SGPO, MethodObj)    // Imported: 2 Arguments
-    External (_SB_.PCI0.SAT0.SDSM, MethodObj)    // Imported: 4 Arguments
     External (_SB_.PCI0.XHC_.RHUB, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.XHC_.RHUB.HS01, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.XHC_.RHUB.HS02, DeviceObj)    // (from opcode)
@@ -83,7 +70,6 @@ DefinitionBlock ("", "SSDT", 2, "XMCC", "XMCC1604", 0x00000000)
     External (_SB_.PCI0.XHC_.RHUB.SS08, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.XHC_.RHUB.SS09, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.XHC_.RHUB.SS10, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.XHC_.RHUB.TPLD, MethodObj)    // Imported: 2 Arguments
     External (_SB_.PCI0.XHC_.RHUB.USR1, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.XHC_.RHUB.USR2, DeviceObj)    // (from opcode)
     External (_SB_.SHPO, MethodObj)    // 2 Arguments (from opcode)
@@ -91,7 +77,6 @@ DefinitionBlock ("", "SSDT", 2, "XMCC", "XMCC1604", 0x00000000)
     External (GPDI, FieldUnitObj)    // (from opcode)
     External (IGDS, UnknownObj)    // (from opcode)
     External (LIDS, UnknownObj)    // (from opcode)
-    External (MDBG, MethodObj)    // Imported: 1 Arguments
     External (OSYS, UnknownObj)    // (from opcode)
     External (P80H, UnknownObj)    // (from opcode)
     External (PNOT, MethodObj)    // 0 Arguments (from opcode)
@@ -101,7 +86,7 @@ DefinitionBlock ("", "SSDT", 2, "XMCC", "XMCC1604", 0x00000000)
 
     Scope (\)
     {
-        OperationRegion (CNVS, SystemMemory, 0x8AF7D018, 0x00000800)
+        OperationRegion (CNVS, SystemMemory, 0x8CF7D018, 0x00000800)
         Field (CNVS, AnyAcc, Lock, Preserve)
         {
             SFUN,   8, 

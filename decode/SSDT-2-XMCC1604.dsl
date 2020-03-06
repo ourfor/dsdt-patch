@@ -5,13 +5,13 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-2-XMCC1604.aml, Fri Mar  6 13:58:52 2020
+ * Disassembly of SSDT-2-XMCC1604.aml, Fri Mar  6 18:20:39 2020
  *
  * Original Table Header:
  *     Signature        "SSDT"
  *     Length           0x00003123 (12579)
  *     Revision         0x02
- *     Checksum         0x88
+ *     Checksum         0x86
  *     OEM ID           "XMCC"
  *     OEM Table ID     "XMCC1604"
  *     OEM Revision     0x00003000 (12288)
@@ -20,33 +20,18 @@
  */
 DefinitionBlock ("", "SSDT", 2, "XMCC", "XMCC1604", 0x00003000)
 {
-    /*
-     * External declarations were imported from
-     * a reference file -- refs.txt
-     */
-
-    External (_GPE.MMTB, MethodObj)    // Imported: 0 Arguments
-    External (_GPE.VHOV, MethodObj)    // Imported: 3 Arguments
     External (_SB_.PCI0, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.GFX0, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD02._BCM, MethodObj)    // Imported: 1 Arguments
     External (_SB_.PCI0.GFX0.HDOS, MethodObj)    // 0 Arguments (from opcode)
     External (_SB_.PCI0.GFX0.HNOT, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.ECMD, MethodObj)    // Imported: 1 Arguments
-    External (_SB_.PCI0.LPCB.H_EC.ECRD, MethodObj)    // Imported: 1 Arguments
-    External (_SB_.PCI0.LPCB.H_EC.ECWT, MethodObj)    // Imported: 2 Arguments
-    External (_SB_.PCI0.PEG0.PEGP.SGPO, MethodObj)    // Imported: 2 Arguments
-    External (_SB_.PCI0.SAT0.SDSM, MethodObj)    // Imported: 4 Arguments
-    External (_SB_.PCI0.XHC_.RHUB.TPLD, MethodObj)    // Imported: 2 Arguments
     External (CPSC, UnknownObj)    // (from opcode)
     External (DSEN, UnknownObj)    // (from opcode)
     External (GUAM, MethodObj)    // 1 Arguments (from opcode)
-    External (MDBG, MethodObj)    // Imported: 1 Arguments
     External (OSYS, IntObj)    // (from opcode)
     External (PNHM, IntObj)    // (from opcode)
     External (S0ID, UnknownObj)    // (from opcode)
 
-    OperationRegion (SANV, SystemMemory, 0x8AF6BBD8, 0x01F7)
+    OperationRegion (SANV, SystemMemory, 0x8CF6BBD8, 0x01F7)
     Field (SANV, AnyAcc, Lock, Preserve)
     {
         ASLB,   32, 

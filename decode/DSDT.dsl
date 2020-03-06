@@ -5,13 +5,13 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of DSDT.aml, Fri Mar  6 13:58:52 2020
+ * Disassembly of DSDT.aml, Fri Mar  6 18:20:39 2020
  *
  * Original Table Header:
  *     Signature        "DSDT"
  *     Length           0x0001F8B2 (129202)
  *     Revision         0x02
- *     Checksum         0xE1
+ *     Checksum         0xD9
  *     OEM ID           "XMCC"
  *     OEM Table ID     "XMCC1604"
  *     OEM Revision     0x00000000 (0)
@@ -20,14 +20,7 @@
  */
 DefinitionBlock ("", "DSDT", 2, "XMCC", "XMCC1604", 0x00000000)
 {
-    /*
-     * External declarations were imported from
-     * a reference file -- refs.txt
-     */
-
     External (_GPE.HLVT, MethodObj)    // 0 Arguments (from opcode)
-    External (_GPE.MMTB, MethodObj)    // Imported: 0 Arguments
-    External (_GPE.VHOV, MethodObj)    // Imported: 3 Arguments
     External (_PR_.BGIA, UnknownObj)    // (from opcode)
     External (_PR_.BGMA, UnknownObj)    // (from opcode)
     External (_PR_.BGMS, UnknownObj)    // (from opcode)
@@ -59,7 +52,6 @@ DefinitionBlock ("", "DSDT", 2, "XMCC", "XMCC1604", 0x00000000)
     External (_SB_.PCI0.GFX0.CBLV, UnknownObj)    // (from opcode)
     External (_SB_.PCI0.GFX0.CDCK, UnknownObj)    // (from opcode)
     External (_SB_.PCI0.GFX0.CLID, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD02._BCM, MethodObj)    // Imported: 1 Arguments
     External (_SB_.PCI0.GFX0.DD1F, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.GFX0.GSCI, MethodObj)    // 0 Arguments (from opcode)
     External (_SB_.PCI0.GFX0.GSSE, UnknownObj)    // (from opcode)
@@ -74,9 +66,6 @@ DefinitionBlock ("", "DSDT", 2, "XMCC", "XMCC1604", 0x00000000)
     External (_SB_.PCI0.LPCB.EC0_.ECPS, MethodObj)    // 1 Arguments (from opcode)
     External (_SB_.PCI0.LPCB.EC0_.ECWK, MethodObj)    // 1 Arguments (from opcode)
     External (_SB_.PCI0.LPCB.EC0_.OSIN, MethodObj)    // 0 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.ECMD, MethodObj)    // Imported: 1 Arguments
-    External (_SB_.PCI0.LPCB.H_EC.ECRD, MethodObj)    // Imported: 1 Arguments
-    External (_SB_.PCI0.LPCB.H_EC.ECWT, MethodObj)    // Imported: 2 Arguments
     External (_SB_.PCI0.LPCB.H_EC.XDAT, MethodObj)    // 0 Arguments (from opcode)
     External (_SB_.PCI0.PAUD.PUAM, MethodObj)    // 0 Arguments (from opcode)
     External (_SB_.PCI0.PEG0, DeviceObj)    // (from opcode)
@@ -84,7 +73,6 @@ DefinitionBlock ("", "DSDT", 2, "XMCC", "XMCC1604", 0x00000000)
     External (_SB_.PCI0.PEG0.PEGP, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.PEG0.PEGP.GSPS, MethodObj)    // 1 Arguments (from opcode)
     External (_SB_.PCI0.PEG0.PEGP.GSWK, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.PEG0.PEGP.SGPO, MethodObj)    // Imported: 2 Arguments
     External (_SB_.PCI0.PEG1, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.PEG1.HPME, MethodObj)    // 0 Arguments (from opcode)
     External (_SB_.PCI0.PEG2, DeviceObj)    // (from opcode)
@@ -103,7 +91,7 @@ DefinitionBlock ("", "DSDT", 2, "XMCC", "XMCC1604", 0x00000000)
     External (_SB_.PCI0.RP17.PWRG, UnknownObj)    // Warning: Unknown object
     External (_SB_.PCI0.RP17.RSTG, UnknownObj)    // Warning: Unknown object
     External (_SB_.PCI0.RP17.SCLK, UnknownObj)    // Warning: Unknown object
-    External (_SB_.PCI0.SAT0.SDSM, MethodObj)    // Imported: 4 Arguments
+    External (_SB_.PCI0.SAT0.SDSM, MethodObj)    // 4 Arguments (from opcode)
     External (_SB_.PCI0.XHC_.DUAM, MethodObj)    // 0 Arguments (from opcode)
     External (_SB_.PCI0.XHC_.PS0X, MethodObj)    // 0 Arguments (from opcode)
     External (_SB_.PCI0.XHC_.PS3X, MethodObj)    // 0 Arguments (from opcode)
@@ -111,7 +99,6 @@ DefinitionBlock ("", "DSDT", 2, "XMCC", "XMCC1604", 0x00000000)
     External (_SB_.PCI0.XHC_.RHUB.PS0X, MethodObj)    // 0 Arguments (from opcode)
     External (_SB_.PCI0.XHC_.RHUB.PS2X, MethodObj)    // 0 Arguments (from opcode)
     External (_SB_.PCI0.XHC_.RHUB.PS3X, MethodObj)    // 0 Arguments (from opcode)
-    External (_SB_.PCI0.XHC_.RHUB.TPLD, MethodObj)    // Imported: 2 Arguments
     External (_SB_.SLPB, DeviceObj)    // (from opcode)
     External (_SB_.TPM_.PTS_, MethodObj)    // 1 Arguments (from opcode)
     External (_TZ_.ETMD, IntObj)    // (from opcode)
@@ -134,7 +121,6 @@ DefinitionBlock ("", "DSDT", 2, "XMCC", "XMCC1604", 0x00000000)
     External (M32L, UnknownObj)    // (from opcode)
     External (M64B, UnknownObj)    // (from opcode)
     External (M64L, UnknownObj)    // (from opcode)
-    External (MDBG, MethodObj)    // Imported: 1 Arguments    // Conflicts with a later declaration
     External (MMRP, MethodObj)    // 1 Arguments (from opcode)
     External (MMTB, MethodObj)    // 1 Arguments (from opcode)
     External (P0WK, UnknownObj)    // (from opcode)
@@ -182,7 +168,7 @@ DefinitionBlock ("", "DSDT", 2, "XMCC", "XMCC1604", 0x00000000)
     Name (SS2, Zero)
     Name (SS3, One)
     Name (SS4, One)
-    OperationRegion (GNVS, SystemMemory, 0x8AF67018, 0x0744)
+    OperationRegion (GNVS, SystemMemory, 0x8CF67018, 0x0744)
     Field (GNVS, AnyAcc, Lock, Preserve)
     {
         OSYS,   16, 
@@ -1338,7 +1324,7 @@ DefinitionBlock ("", "DSDT", 2, "XMCC", "XMCC1604", 0x00000000)
         Offset (0x744)
     }
 
-    OperationRegion (OGNS, SystemMemory, 0x8AF67FD8, 0x0000000C)
+    OperationRegion (OGNS, SystemMemory, 0x8CF67FD8, 0x0000000C)
     Field (OGNS, AnyAcc, Lock, Preserve)
     {
         OG00,   8, 
@@ -3512,7 +3498,7 @@ DefinitionBlock ("", "DSDT", 2, "XMCC", "XMCC1604", 0x00000000)
         }
     }
 
-    Name (PNVB, 0x8AF7D898)
+    Name (PNVB, 0x8CF7D898)
     Name (PNVL, 0x0287)
     OperationRegion (PNVA, SystemMemory, PNVB, PNVL)
     Field (PNVA, AnyAcc, Lock, Preserve)
@@ -18077,8 +18063,7 @@ DefinitionBlock ("", "DSDT", 2, "XMCC", "XMCC1604", 0x00000000)
         Method (TBFF, 1, Serialized)
         {
             ADBG ("TBFF")
-            Store (MMTB (), Arg0)
-            Local0
+            Store (MMTB (Arg0), Local0)
             OperationRegion (PXVD, SystemMemory, Local0, 0x04)
             Field (PXVD, DWordAcc, NoLock, Preserve)
             {
@@ -18383,8 +18368,7 @@ DefinitionBlock ("", "DSDT", 2, "XMCC", "XMCC1604", 0x00000000)
         Method (DMSI, 1, Serialized)
         {
             ADBG ("DMSI")
-            Add (MMTB (), Arg0, 0x0548)
-            Local0
+            Add (MMTB (Arg0), 0x0548, Local0)
             OperationRegion (PXVD, SystemMemory, Local0, 0x08)
             Field (PXVD, DWordAcc, NoLock, Preserve)
             {
@@ -18437,8 +18421,7 @@ DefinitionBlock ("", "DSDT", 2, "XMCC", "XMCC1604", 0x00000000)
         {
             ADBG ("RSMI")
             Store (TFPS (), Local0)
-            Add (MMTB (), Arg0)
-            Local1
+            Add (MMTB (Arg0), Zero, Local1)
             OperationRegion (PXVD, SystemMemory, Local1, 0x0550)
             Field (PXVD, DWordAcc, NoLock, Preserve)
             {
@@ -18521,8 +18504,7 @@ DefinitionBlock ("", "DSDT", 2, "XMCC", "XMCC1604", 0x00000000)
                 Return (Zero)
             }
 
-            Add (MMTB (), Arg0, 0x0544)
-            Local0
+            Add (MMTB (Arg0), 0x0544, Local0)
             OperationRegion (PXVD, SystemMemory, Local0, 0x08)
             Field (PXVD, DWordAcc, NoLock, Preserve)
             {
@@ -18682,8 +18664,7 @@ DefinitionBlock ("", "DSDT", 2, "XMCC", "XMCC1604", 0x00000000)
 
             Store (REG6, Local1)
             Store (0x00F0F000, REG6)
-            Store (MMTB (), Arg0)
-            Local2
+            Store (MMTB (Arg0), Local2)
             OSUP (Local2)
             Store (Local1, REG6)
             ADBG ("End-of-TINI")
@@ -30846,7 +30827,7 @@ DefinitionBlock ("", "DSDT", 2, "XMCC", "XMCC1604", 0x00000000)
 
     Name (BUFN, Zero)
     Name (MBUF, Buffer (0x1000){})
-    OperationRegion (MDBG, SystemMemory, 0x8AF54018, 0x00001004)
+    OperationRegion (MDBG, SystemMemory, 0x8CF54018, 0x00001004)
     Field (MDBG, AnyAcc, Lock, Preserve)
     {
         MDG0,   32768

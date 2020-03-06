@@ -5,13 +5,13 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-5-XMCC1604.aml, Fri Mar  6 13:58:52 2020
+ * Disassembly of SSDT-5-XMCC1604.aml, Fri Mar  6 18:20:39 2020
  *
  * Original Table Header:
  *     Signature        "SSDT"
  *     Length           0x000017AE (6062)
  *     Revision         0x02
- *     Checksum         0xA9
+ *     Checksum         0x99
  *     OEM ID           "XMCC"
  *     OEM Table ID     "XMCC1604"
  *     OEM Revision     0x00003000 (12288)
@@ -20,13 +20,6 @@
  */
 DefinitionBlock ("", "SSDT", 2, "XMCC", "XMCC1604", 0x00003000)
 {
-    /*
-     * External declarations were imported from
-     * a reference file -- refs.txt
-     */
-
-    External (_GPE.MMTB, MethodObj)    // Imported: 0 Arguments
-    External (_GPE.VHOV, MethodObj)    // Imported: 3 Arguments
     External (_PR_.PR00, DeviceObj)    // (from opcode)
     External (_PR_.PR01, DeviceObj)    // (from opcode)
     External (_PR_.PR02, DeviceObj)    // (from opcode)
@@ -44,14 +37,6 @@ DefinitionBlock ("", "SSDT", 2, "XMCC", "XMCC1604", 0x00003000)
     External (_PR_.PR14, DeviceObj)    // (from opcode)
     External (_PR_.PR15, DeviceObj)    // (from opcode)
     External (_SB_.OSCP, IntObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD02._BCM, MethodObj)    // Imported: 1 Arguments
-    External (_SB_.PCI0.LPCB.H_EC.ECMD, MethodObj)    // Imported: 1 Arguments
-    External (_SB_.PCI0.LPCB.H_EC.ECRD, MethodObj)    // Imported: 1 Arguments
-    External (_SB_.PCI0.LPCB.H_EC.ECWT, MethodObj)    // Imported: 2 Arguments
-    External (_SB_.PCI0.PEG0.PEGP.SGPO, MethodObj)    // Imported: 2 Arguments
-    External (_SB_.PCI0.SAT0.SDSM, MethodObj)    // Imported: 4 Arguments
-    External (_SB_.PCI0.XHC_.RHUB.TPLD, MethodObj)    // Imported: 2 Arguments
-    External (MDBG, MethodObj)    // Imported: 1 Arguments
     External (OSYS, UnknownObj)    // (from opcode)
 
     Scope (\)
@@ -59,25 +44,25 @@ DefinitionBlock ("", "SSDT", 2, "XMCC", "XMCC1604", 0x00003000)
         Name (SSDT, Package (0x15)
         {
             "CPU0IST ", 
-            0x8A782018, 
+            0x8C782018, 
             0x000006F6, 
             "APIST   ", 
-            0x8A781018, 
+            0x8C781018, 
             0x00000D14, 
             "CPU0CST ", 
-            0x8A782898, 
+            0x8C782898, 
             0x000003FF, 
             "APCST   ", 
-            0x8A780018, 
+            0x8C780018, 
             0x0000030A, 
             "CPU0HWP ", 
-            0x7A96EDD8, 
+            0x7C96EDD8, 
             0x000000BA, 
             "APHWP   ", 
-            0x7A96F018, 
+            0x7C96F018, 
             0x00000317, 
             "HWPLVT  ", 
-            0x7A964558, 
+            0x7C964558, 
             0x00000628
         })
         Name (\PC00, 0x80000000)
@@ -102,7 +87,7 @@ DefinitionBlock ("", "SSDT", 2, "XMCC", "XMCC1604", 0x00003000)
     Scope (\_PR)
     {
         Name (CTPC, Zero)
-        OperationRegion (PNVS, SystemMemory, 0x71235000, 0x006C)
+        OperationRegion (PNVS, SystemMemory, 0x73235000, 0x006C)
         Field (PNVS, AnyAcc, Lock, Preserve)
         {
             PGRV,   8, 
